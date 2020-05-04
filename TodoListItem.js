@@ -11,6 +11,8 @@ export default class TodoListItem extends React.Component {
   onCheckboxChange(event) {
     // TODO(#18) Call this.props.onToggle with the todo ID.
     // hint: How can you access the todo ID?
+
+    this.props.onToggle(this.props.todo.id)
   }
 
   onRemoveClick(event) {
@@ -32,8 +34,8 @@ export default class TodoListItem extends React.Component {
             id={id}
             className="form-check-input"
             type="checkbox"
-            checked={/* TODO(#19) Use the correct todo property. */}
-            onChange={/* TODO(#20) Use the correct event handler. */}
+            checked={this.props.todo.isComplete/* TODO(#19) Use the correct todo property. */}
+            onChange={this.onCheckboxChange/* TODO(#20) Use the correct event handler. */}
           />
           <label htmlFor={id} className="form-check-label">
             {this.props.todo.text}
