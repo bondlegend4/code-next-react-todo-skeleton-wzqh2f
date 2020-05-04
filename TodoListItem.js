@@ -17,6 +17,7 @@ export default class TodoListItem extends React.Component {
 
   onRemoveClick(event) {
     // TODO(#25) Call this.props.onRemove with the todo ID.
+    this.props.onRemove(this.props.todo.id);
   }
 
   render() {
@@ -43,7 +44,7 @@ export default class TodoListItem extends React.Component {
         </div>
         <button
           className="btn btn-danger btn-sm"
-          onClick={/* TODO(#26) Use the correct event handler */}
+          onClick={this.onRemoveClick/* TODO(#26) Use the correct event handler */}
         >
           remove
         </button>
